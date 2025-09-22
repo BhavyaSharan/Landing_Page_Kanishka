@@ -1,0 +1,482 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  color: #d4af37;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Buttons */
+.btn {
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  border: none;
+  color: #000;
+  user-select: none;
+}
+
+.btn-golden {
+  background-color: #d4af37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+}
+
+.btn-golden:hover,
+.btn-golden:focus {
+  background-color: #b8942b;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 1);
+  outline: none;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #218838;
+  box-shadow: 0 0 25px rgba(40, 167, 69, 1);
+  outline: none;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  padding: 3rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #000;
+  color: #d4af37;
+}
+
+.book-call-section .btn-success {
+  margin-top: 2rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Video Section */
+.video-section {
+  padding: 2rem 1rem;
+  background: #111;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #d4af37;
+}
+
+.video-section h2 {
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.video-section p {
+  margin-bottom: 2rem;
+  color: #e0c95c;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #d4af37;
+}
+
+/* Book Call Section */
+.book-call-section {
+  background: #222;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #d4af37;
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #d4af37;
+}
+
+.calendly-inline-widget {
+  min-width: 480px !important;
+  height: 900px !important;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #d4af37;
+  margin: 0 auto;
+  display: block;
+}
+
+.book-call-section h2 {
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.book-call-section p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Calendly iframe */
+.calendly-iframe {
+  width: 100%;
+  height: 420px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #d4af37;
+  margin-bottom: 1.5rem;
+  border: none;
+  max-width: 500px;
+}
+
+/* Value Cards */
+.value-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #000;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  flex: 1 1 0;
+  color: #d4af37;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 1);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* FAQ Section */
+.faq-section {
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.faq-item {
+  background: #111;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 700;
+  color: #d4af37;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+.faq-answer {
+  padding: 1rem 1.5rem;
+  background: #222;
+  color: #f0deb1;
+  font-size: 1rem;
+  display: none;
+}
+
+.faq-answer.active {
+  display: block;
+}
+
+/* Toggle icon */
+.toggle-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] .toggle-icon {
+  transform: rotate(45deg);
+  font-weight: bold;
+}
+
+/* Footer */
+.site-footer {
+  background: #000;
+  color: #d4af37;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #d4af37;
+}
+
+.site-footer a {
+  color: #d4af37;
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  color: #b8942b;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .value-cards {
+    flex-direction: column;
+  }
+
+  .video-section,
+  .book-call-section,
+  .stats-section {
+    max-width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .video-wrapper {
+    max-width: 100%;
+    padding-bottom: 56.25%;
+  }
+
+  .card,
+  .flip-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 2rem;
+  }
+
+  .stats-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+  }
+
+  .stat-label {
+    font-size: 1.1rem;
+  }
+
+  .faq-section {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .btn-golden.btn-lg {
+    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+  }
+
+  .book-call-button-container {
+    margin: 2rem 0;
+  }
+
+  .top-left-logo img {
+    height: 120px;
+  }
+
+  .top-left-email {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Flip card container perspective */
+.flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+/* Inner container to rotate */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 16px;
+}
+
+/* Flipped state */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back faces */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;  /* for Safari */
+}
+
+/* Front face style */
+.card-front {
+  background: #000;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+  color: #d4af37;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+/* Back face style */
+.card-back {
+  background: #d4af37;
+  color: #000;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;           /* increased gap for spacing */
+  margin: 3rem auto 5rem;
+  max-width: 900px;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;     /* pointer cursor on hover */
+}
+
+.stat-number {
+  font-size: 5rem;          /* larger size */
+  font-weight: 900;
+  color: #d4af37;
+  text-shadow: 0 0 15px #d4af37;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.stat-number:hover {
+  transform: scale(1.3);    /* enlarge 30% on hover */
+}
+
+.stat-label {
+  font-size: 1.5rem;        /* bigger font */
+  font-weight: 700;
+  color: #d4af37;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+.book-call-button-container {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.book-call-button-container .btn-golden.btn-lg {
+  font-size: 1.5rem;       /* bigger font size */
+  padding: 0.85rem 2.5rem; /* larger padding */
+}
+html {
+  scroll-behavior: smooth;
+}
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;      /* max width you want */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (9/16 = 0.5625) */
+  height: 0;
+  margin: 0 auto;        /* center horizontally */
+}
+
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;   /* optional rounded corners */
+  box-shadow: 0 0 20px #d4af37;
+}
+#cursor-light {
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(212,175,55,0.4) 0%, transparent 80%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: top 0.1s ease, left 0.1s ease;
+  z-index: 9999;
+}
