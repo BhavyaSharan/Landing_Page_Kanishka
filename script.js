@@ -133,3 +133,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+window.addEventListener('scroll', () => {
+  const statsSection = document.querySelector('.stats-section');
+  const statItems = document.querySelectorAll('.stat-item');
+  if (!statsSection || statItems.length === 0) return;
+
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const sectionTop = statsSection.offsetTop;
+  const sectionHeight = statsSection.offsetHeight;
+  const windowHeight = window.innerHeight;
+
+  // Start effects when section near viewport bottom, end when past section bottom
+  const startOffset = sectionTop - windowHeight + 100; // tweak 100 for earlier start if needed
+  const endOffset = sectionTop + sectionHeight;
+
+  statItems.forEach((item, index) => {
+    const label = item.querySelector('.stat-label');
+
+    if (scrollTop >= startOffset && scrollTop <= endOffset) {
+      const relativeScroll = scrollTop - startOffset;
+      const sectionScrollRange = endOffset - startOffset;
+
+      // Normalize relative scroll to 0-1 within section viewport
+      let progress = relativeScroll / sectionScrollRange;
+      progress = Math.min(Math.max(progress, 0), 1);
+
+      // item moves up from +30px to 0 (progress 0 to 0.3), then down to +20px (progress 0.3 to 1)
+      let itemTranslateY;
+      if (progress < 0.3) {
+        itemTranslateY = 30 * (1 - progress / 0.3);
+      } else {
+        itemTranslateY = 20 * (progress - 0.3) / 0.7;
+      }
+
+      // label moves down from 0 to +20px linearly with full progress
+      let labelTranslateY = 20 * progress;
+
+      item.style.transform = `translateY(${itemTranslateY}px)`;
+      item.style.opacity = '1';
+
+      if (label) {
+        label.style.transform = `translateY(${labelTranslateY}px)`;
+        label.style.opacity = '1';
+      }
+    } else if (scrollTop < startOffset) {
+      // Before section - hide partially below (+30px), semi-transparent
+      item.style.transform = 'translateY(30px)';
+      item.style.opacity = '0.5';
+
+      if (label) {
+        label.style.transform = 'translateY(0px)';
+        label.style.opacity = '0.5';
+      }
+    } else {
+      // After section - hide fully above (0px), fully transparent
+      item.style.transform = 'translateY(0)';
+      item.style.opacity = '0';
+
+      if (label) {
+        label.style.transform = 'translateY(20px)';
+        label.style.opacity = '0';
+      }
+    }
+  });
+});
